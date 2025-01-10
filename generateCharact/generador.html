@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoC 7e Character Creation</title>
+    <link rel="stylesheet" href="../styleBasic.css">
+</head>
+<body>
+    <header class="sidebar">
+        <h1>Generador de Fichas - Call of Cthulhu 7e</h1>
+        <nav>
+          <a href="../index.html">Inicio</a>
+          <a href="generador.html">Creador de Investigadores</a>
+          <a href="../charactReader/buscarCharacter.html">Lector de Investigadores</a>
+          <a href="../basicRules/rules.html">Reglas Básicas</a>
+          <a href="../biography/bio.html">Sobre Lovecraft</a>
+          <img src="../Unbenanntes_Projekt.png" alt="Logo">
+        </nav>
+    </header>
+
+    <h1>Call of Cthulhu 7e - Creador de Investigadores</h1>
+    <h2>Paso 1: Las características</h2>
+    <section class="attributeColumn"> 
+
+        <div class="characteristic">
+            <h2>STR (Fuerza)</h2>
+            <p>Tira 3D6 y multiplica por 5 para generar la característica de Fuerza.</p>
+            <button onclick="rollCharacteristic('strResult', roll3D6)">
+                <span class="button_top">Tirar STR</span>
+            </button>
+            <button onclick="generateCharac('STR', 'strResult')">
+                <span class="button_top">Guardar STR</span>
+            </button>
+            <p class="result" id="strResult">Resultado: Sin tirar</p>
+        </div>
+    
+        <div class="characteristic">
+            <h2>CON (Constitución)</h2>
+            <p>Tira 3D6 y multiplica por 5 para generar la característica de Constitución.</p>
+            <button onclick="rollCharacteristic('conResult', roll3D6)">
+                <span class="button_top">Tirar CON</span>
+            </button>
+            <button onclick="generateCharac('CON', 'conResult')">
+                <span class="button_top">Guardar CON</span>
+            </button>
+            <p class="result" id="conResult">Resultado: Sin tirar</p>
+        </div>
+    
+        <div class="characteristic">
+            <h2>SIZ (Tamaño)</h2>
+            <p>Tira 2D6+6 y multiplica por 5 para generar la característica de Tamaño.</p>
+            <button onclick="rollCharacteristic('sizResult', roll2D6Plus6)">
+                <span class="button_top">Tirar SIZ</span>
+            </button>
+            <button onclick="generateCharac('SIZ', 'sizResult')">
+                <span class="button_top">Guardar SIZ</span>
+            </button>
+            <p class="result" id="sizResult">Resultado: Sin tirar</p>
+        </div>
+    
+    </section>
+    
+    <section class="attributeColumn">
+
+        <div class="characteristic">
+            <h2>DEX (Destreza)</h2>
+            <p>Tira 3D6 y multiplica por 5 para generar la característica de Destreza.</p>
+            <button onclick="rollCharacteristic('dexResult', roll3D6)">
+                <span class="button_top">Tirar para DEX</span>
+            </button>
+            <button onclick="generateCharac('DEX', 'dexResult')">
+                <span class="button_top">Guardar DEX</span>
+            </button>
+            <p class="result" id="dexResult">Resultado: Sin tirar</p>
+        </div>
+    
+        <div class="characteristic">
+            <h2>APP (Apariencia)</h2>
+            <p>Tira 3D6 y multiplica por 5 para generar la característica de Apariencia.</p>
+            <button onclick="rollCharacteristic('appResult', roll3D6)">
+                <span class="button_top">Tirar para APP</span>
+            </button>
+            <button onclick="generateCharac('APP', 'appResult')">
+                <span class="button_top">Guardar APP</span>
+            </button>
+            <p class="result" id="appResult">Resultado: Sin tirar</p>
+        </div>
+    
+        <div class="characteristic">
+            <h2>INT (Inteligencia)</h2>
+            <p>Tira 2D6+6 y multiplica por 5 para generar la característica de Inteligencia.</p>
+            <button onclick="rollCharacteristic('intResult', roll2D6Plus6)">
+                <span class="button_top">Tirar para INT</span>
+            </button>
+            <button onclick="generateCharac('INT', 'intResult')">
+                <span class="button_top">Guardar INT</span>
+            </button>
+            <p class="result" id="intResult">Resultado: Sin tirar</p>
+        </div>
+    
+    </section>
+    
+    <section class="attributeColumn">
+    
+        <div class="characteristic">
+            <h2>POW (Poder)</h2>
+            <p>Tira 3D6 y multiplica por 5 para generar la característica de Poder.</p>
+            <button onclick="rollCharacteristic('powResult', roll3D6)">
+                <span class="button_top">Tirar para POW</span>
+            </button>
+            <button onclick="generateCharac('POW', 'powResult')">
+                <span class="button_top">Guardar POW</span>
+            </button>
+            <p class="result" id="powResult">Resultado: Sin tirar</p>
+        </div>
+    
+        <div class="characteristic">
+            <h2>EDU (Educación)</h2>
+            <p>Tira 2D6+6 y multiplica por 5 para generar la característica de Educación.</p>
+            <button onclick="rollCharacteristic('eduResult', roll2D6Plus6)">
+                <span class="button_top">Tirar para EDU</span>
+            </button>
+            <button onclick="generateCharac('EDU', 'eduResult')">
+                <span class="button_top">Guardar EDU</span>
+            </button>
+            <p class="result" id="eduResult">Resultado: Sin tirar</p>
+        </div>
+    
+        <div class="characteristic">
+            <h2>Suerte (Suerte)</h2>
+            <p>Tira 3D6 y multiplica por 5 para generar la característica de Suerte.</p>
+            <button onclick="rollCharacteristic('luckResult', roll3D6)">
+                <span class="button_top">Tirar para Suerte</span>
+            </button>
+            <button onclick="generateCharac('Luck', 'luckResult')">
+                <span class="button_top">Guardar Suerte</span>
+            </button>
+            <p class="result" id="luckResult">Resultado: Sin tirar</p>
+        </div>
+    
+    </section>    
+
+    <h2>Paso 2: La edad</h2>
+
+    <section class="age">
+        <h2>Edad</h2>
+        <p>Selecciona una edad entre 15 y 90. Una vez elegida, no podrá ser cambiada.</p>
+        <div class="input-container">
+            <input type="number" id="ageInput" placeholder="Edad del Investigador" class="input">
+            <button onclick="setAge('Age', 'ageInput')">
+                <span class="button_top">Guardar Edad</span>
+            </button>
+        </div>   
+
+    </section>
+
+    <h2>Paso 3: Números automáticos</h2>
+    
+    <section class="attributeColumn">
+        <div class="otherCharacteristic">
+            <h2>Bonus de daño y Corpulencia</h2>
+            <p>Para determinar el bono de daño, suma STR a SIZ y consulta el total en la Tabla 1: Bono de Daño y Complexión.</p>
+            <p class="result" id="damageBuildResult">Tirar STR y SIZ</p>
+        </div>
+        <div class="otherCharacteristic">
+            <h2>Puntos de Vida</h2>
+            <p>Los puntos de vida se utilizan para llevar el registro del daño acumulado infligido a un investigador.</p>
+            <p class="result" id="hitPointsResult">Tirar CON y SIZ</p>
+        </div>
+        <div class="otherCharacteristic">
+            <h2>Movimiento</h2>
+            <p>Un investigador puede moverse una cantidad de yardas (o metros) hasta cinco veces su valor MOV en una ronda.</p>
+            <p class="result" id="movementResult">Tirar DEX, STR, SIZ y elegir Edad</p>
+        </div>
+    </section>    
+
+    <h2>Paso 4: La ocupación</h2>
+    
+    <section class="age">
+        <h2>Seleccionar Ocupación</h2>
+        <select id="occupation" onchange="updateOccupationDetails()">
+            <option value="" selected>Seleccione una ocupación</option>
+        </select>
+        
+        <div id="occupation_details">
+            <p id="occupation_skills"></p>
+            <p id="credit_rating"></p>
+            <p id="occupation_skill_points"></p>
+            <p id="personal_interests"></p>
+        </div>       
+    </section>
+
+    <h2>Paso 5: Las habilidades</h2>
+
+    <section class="skills">
+        <div id="points-container"></div>
+        <ul id="skills-list"></ul>
+        <button id="addSkillsButton" onclick="addAllSkillsToCharacter()">
+            <span class="button_top">Añadir todas las skills</span>
+        </button>            
+    </section>
+
+    <section class="age">
+        <h2>Previsualización del Personaje</h2>
+        <button onclick="generateUniqueID()">
+            <span class="button_top">Crear ID</span>
+        </button> 
+        <div id="outputJson">Sin datos</div> 
+        <button onclick="saveCharacter()">
+            <span class="button_top">Guardar Personaje</span>
+        </button> 
+    </section>
+
+    <script src="rollDice.js" type="module"></script>
+    <script src="generateCharac.js" type="module"></script>
+</body>
+</html>

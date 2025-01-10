@@ -1,0 +1,227 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #cddbff;
+}
+
+/* Títulos */
+h1, h2 {
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    color: #ffffff;
+    font-size: 2.5em;
+}
+h2 {
+    color: #000000;
+    font-size: 1.8em;
+}
+
+/* Contenedores */
+.characteristic {
+    margin: 2px auto;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #92a6ff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 290px;
+    text-align: center;
+}
+.otherCharacteristic {
+    margin: 10px auto;
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid #92a6ff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+}
+.age, .skills {
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #92a6ff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    text-align: center;
+}
+#skills-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#skills-list li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* Ajusta según el tamaño que desees */
+    border: 1px solid #92a6ff; /* Para un borde opcional */
+    border-radius: 4px; /* Bordes redondeados opcionales */
+}
+.attributeColumn {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; /* Espacio entre columnas y filas */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Botones */
+button {
+    --button_radius: 0.75em;
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
+  } 
+.button_top {
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid var(--button_outline_color);
+    border-radius: var(--button_radius);
+    padding: 0.75em 1.5em;
+    background: var(--button_color);
+    color: var(--button_outline_color);
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+  }
+button:hover .button_top {
+    /* Lo sube tras el click */
+    transform: translateY(-0.33em);
+  }
+button:active .button_top {
+    /* Empuja el botón el clickar */
+    transform: translateY(0);
+  }  
+
+/*Inputs*/
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.input {
+    border-radius: 10px;
+    outline: 2px solid #92a6ff;
+    border: 0;
+    background-color: #e2e2e2;
+    outline-offset: 3px;
+    padding: 10px 1rem;
+    transition: 0.25s;
+    margin-right: 10px; /* Espacio entre el input y el botón */
+}
+.input:focus {
+    outline-offset: 5px;
+    background-color: #fff;
+}
+
+/* Resultado */
+.result {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1em;
+}
+/* Contenedor JSON */
+#outputJson {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 500px;
+    background: #e8f5e9;
+    border: 1px solid #4caf50;
+    border-radius: 8px;
+    color: #2e7d32;
+    font-size: 1em;
+    white-space: pre-wrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Barra lateral */
+header {
+    width: 180px;
+    background: #130d5c;
+    color: white;
+    padding: 1em;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+header img {
+    width: 115%;
+}
+header h1 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #2a2f87;
+    transition: background 0.3s;
+}
+nav a:hover {
+    background: #45a049;
+}
+
+/* Contenido principal */
+body > h1, body > .characteristic, #outputJson {
+    margin-top: 20px;
+    padding: 20px;
+    background: #92a6ff;
+    border: 1px solid #0f067d;
+    border-radius: 8px;
+    color: #0f067d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#characterOutput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;  /* Espaciado entre las cajas */
+}
+
+#characterOutput .box {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    font-size: 20px;
+    font-weight: bold;
+}
