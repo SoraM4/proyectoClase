@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Fichas - Call of Cthulhu 7e</title>
+    <link rel="stylesheet" href="../styleBasic.css">
+    <style>
+        .slider-container {
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .slider {
+            display: none;
+            padding: 20px;
+        }
+        .active {
+            display: block;
+        }
+        .controls {
+            margin-top: 10px;
+        }
+        .controls button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #130d5c;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .controls button:hover {
+            background-color: #0a0740;
+        }
+        .slider-container {
+        position: relative;
+        width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+        border: 2px solid #130d5c;
+        border-radius: 10px;
+        background-color: #f8f8f8;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra lateral (Header) -->
+    <header class="sidebar">
+        <h1>Generador de Fichas - Call of Cthulhu 7e</h1>
+        <nav>
+            <a href="../index.html">Inicio</a>
+            <a href="../generateCharact/generador.html">Creador de Investigadores</a>
+            <a href="../charactReader/buscarCharacter.html">Lector de Investigadores</a>
+            <a href="../basicRules/rules.html">Reglas Básicas</a>
+            <a href="">Sobre Lovecraft</a>
+            <img src="../Unbenanntes_Projekt.png" alt="Logo">
+          </nav>          
+    </header>
+
+    <!-- Contenido principal -->
+    <main style="margin-left: 240px; padding: 20px;">
+        <div class="slider-container" id="sliderContainer">
+            <!-- Los textos se cargarán aquí dinámicamente -->
+        </div>
+        <div class="controls">
+            <button id="prev">Anterior</button>
+            <button id="next">Siguiente</button>
+        </div>
+
+        <div style="margin-top: 30px; text-align: center;">
+            <h2>Galería de Imágenes</h2>
+            <img src="Tumblr_m5rqheP8pm1rv6ejmo1_1280.webp" alt="Descripción de la imagen 1" style="width: 300px; border-radius: 10px; margin: 10px;">
+            <img src="105762ad66a831023c8fc5795efb11e4.jpg" alt="Descripción de la imagen 2" style="width: 300px; border-radius: 10px; margin: 10px;">
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer style="margin-left: 240px; padding: 20px; background-color: #130d5c; color: white; text-align: center;">
+        <p>&copy; 2024 Generador de Fichas para Call of Cthulhu 7e. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        let slides = [];
+
+        // Obtener datos desde el servidor
+        fetch('getBio.php')
+            .then(response => response.json())
+            .then(data => {
+                slides = data;
+                renderSlider();
+            });
+
+        function renderSlider() {
+            const container = document.getElementById('sliderContainer');
+            container.innerHTML = '';
+            slides.forEach((slide, index) => {
+                const div = document.createElement('div');
+                div.className = 'slider' + (index === 0 ? ' active' : '');
+                div.innerHTML = `<h2>${slide.title}</h2><p>${slide.text}</p>`;
+                container.appendChild(div);
+            });
+        }
+
+        document.getElementById('prev').addEventListener('click', () => {
+            changeSlide(-1);
+        });
+        document.getElementById('next').addEventListener('click', () => {
+            changeSlide(1);
+        });
+
+        function changeSlide(direction) {
+            const sliders = document.querySelectorAll('.slider');
+            sliders[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            sliders[currentSlide].classList.add('active');
+        }
+    </script>
+</body>
+</html>

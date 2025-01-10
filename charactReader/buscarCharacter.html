@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Fichas - Call of Cthulhu 7e</title>
+    <link rel="stylesheet" href="../styleBasic.css">
+    <style>
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra lateral (Header) -->
+    <header class="sidebar">
+        <h1>Generador de Fichas - Call of Cthulhu 7e</h1>
+        <nav>
+            <a href="../index.html">Inicio</a>
+            <a href="../generateCharact/generador.html">Creador de Investigadores</a>
+            <a href="">Lector de Investigadores</a>
+            <a href="../basicRules/rules.html">Reglas Básicas</a>
+            <a href="../biography/bio.html">Sobre Lovecraft</a>
+            <img src="../Unbenanntes_Projekt.png" alt="Logo">
+          </nav>
+    </header>
+<body>
+    <h1>Buscar Personaje</h1>
+    <div class="input-container">
+        <input type="text" id="characterID" placeholder="ID del Investigador" name="text" class="input">
+        <button onclick="fetchCharacter()">
+          <span class="button_top">Buscar</span>
+        </button>
+    </div>      
+
+    <h1>Ficha</h1>
+    <h2> Characterísticas Básicas </h2>
+    <div id="characterOutput">
+        <div class="box" id="STR"></div>
+        <div class="box" id="DEX"></div>
+        <div class="box" id="POW"></div>
+        <div class="box" id="CON"></div>
+        <div class="box" id="APP"></div>
+        <div class="box" id="EDU"></div>
+        <div class="box" id="SIZ"></div>
+        <div class="box" id="INT"></div>
+        <div class="box" id="MOV"></div>
+    </div>
+    <h2> Characterísticas Secundarias </h2> 
+    <div id="characterOutput">
+        <div class="box" id="PV"></div>
+        <div class="box" id="PM"></div>
+        <div class="box" id="COR"></div>
+        <div class="box" id="SUE"></div>
+    </div>
+    <h2> Habilidades </h2> 
+    <section class="age">
+        <div class="skills-container" id="skillsOutput"></div>
+    </section>
+    <h2> Combate </h2>
+
+    <script src="buscarCharacter.js"></script>
+</body>
+</html>
+
